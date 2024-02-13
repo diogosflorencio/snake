@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+}
+.tela {
+    width: 95vw;
+    height: 95vh;
+}
+.conteiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
