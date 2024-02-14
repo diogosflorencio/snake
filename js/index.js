@@ -1,11 +1,10 @@
 const tela = document.querySelector(".tela");
-const pincel = tela.getContext("2d");
 
-pincel.beginPath();
-pincel.fillStyle = 'black';
-pincel.arc(10,26,4,0,2*3.14);
-pincel.fill(); 
-pincel.beginPath();
-pincel.fillStyle = 'black';
-pincel.arc(10,34,4,0,2*3.14);
-pincel.fill(); 
+const criaCobrinha = () => {
+    const cobrinha = tela.getContext("2d");
+    cobrinha.beginPath();
+    cobrinha.fillStyle = 'black';
+    cobrinha.arc(10,10,10,0,4*3.14);
+    cobrinha.fill(); 
+}
+criaCobrinha();
