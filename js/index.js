@@ -18,7 +18,7 @@ const criaCobrinha = (param) => {
             cobrinha.arc(x,y-=20,10,0,4*3.14);
             cobrinha.fill();   
         }
-    },1000) 
+    },1000)
 }
 const movimentaCobrinha = (param) => {
     if(param == "cima"){
