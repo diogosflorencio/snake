@@ -114,4 +114,4 @@ const movimentaCobrinhaBotoes = (param) => {
 cima.addEventListener("click", () => movimentaCobrinhaBotoes("cima"));
 direta.addEventListener("click", () => movimentaCobrinhaBotoes("direita"));
 esquerda.addEventListener("click", () => movimentaCobrinhaBotoes("esquerda"));
-baixo.addEventListener("click", () =>movimentaCobrinhaBotoes("baixo"));
+baixo.addEventListener("click", () =>movimentaCobrinhaBotoes("baixo")); 
