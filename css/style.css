@@ -7,9 +7,6 @@
     align-items: center;
     height: 375px;
 }
-.tela {
-    background-color: rgb(0, 0, 0);
-}
 .botoes{
     display: grid;
     grid-template-columns: repeat(3, 70px);
