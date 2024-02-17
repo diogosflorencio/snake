@@ -23,10 +23,12 @@ let velocidadeY = 0;
 
 let cobraCorpo = []
 
+let gamerover = false;
 
 // comida 
 let comidaX;
 let comidaY;
+let comidas = 0;
 
 window.onload = () => {
     quadro.height = linhas * tamanho;
@@ -38,6 +40,10 @@ window.onload = () => {
     setInterval(criaCobrinha, 1000/10) 
 }
 const criaCobrinha = (param) => {
+    if(gamerover){
+        return false;
+    }
+
     contexto.fillStyle = "black";
     contexto.fillRect(0, 0, quadro.width, quadro.height);
 
@@ -47,7 +53,10 @@ const criaCobrinha = (param) => {
     if(cobraX == comidaX && cobraY == comidaY){
         cobraCorpo.push([comidaX, comidaY]);
         comidaAleatoria();
+        comidas++;
     }
+    contexto.font = "30px Arial";
+    contexto.fillText(comidas, 10, 35);
 
     for (let i = cobraCorpo.length -1; i > 0; i--){
         cobraCorpo[i] = cobraCorpo[i-1];
@@ -66,6 +75,13 @@ const criaCobrinha = (param) => {
         contexto.fillRect(cobraCorpo[i][0], cobraCorpo[i][1], tamanho, tamanho)
     }
     
+    //fim do jogo
+
+    if(cobraX < 0 || cobraX > colunas*tamanho || cobraY < 0 || cobraY > colunas*tamanho){
+        gamerover = true;
+        alert("Fim do jogo!")
+        location.reload() 
+    }
 
 }
  
