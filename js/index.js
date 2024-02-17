@@ -37,7 +37,7 @@ window.onload = () => {
     comidaAleatoria();
     document.addEventListener("keyup", movimentaCobrinhaSetas)
     criaCobrinha();
-    setInterval(criaCobrinha, 1000/10) 
+    setInterval(criaCobrinha, 1600/10) 
 }
 const criaCobrinha = (param) => {
     if(gamerover){
