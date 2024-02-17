@@ -15,8 +15,8 @@ let quadro = tela;
 let contexto;
 
 // cobra 
-let cobraX = tamanho * 5;
-let cobraY = tamanho * 5;
+let cobraX = tamanho;
+let cobraY = tamanho;
 
 let velocidadeX = 0;
 let velocidadeY = 0;
@@ -47,8 +47,13 @@ const criaCobrinha = (param) => {
     contexto.fillStyle = "black";
     contexto.fillRect(0, 0, quadro.width, quadro.height);
 
-    contexto.fillStyle = "red";
-    contexto.fillRect(comidaX, comidaY, tamanho, tamanho);
+    contexto.beginPath();
+    contexto.fillStyle = 'red';
+    contexto.arc(comidaX, comidaY,tamanho/2,0,2*3.14);
+    contexto.fill();  
+
+    // contexto.fillStyle = "red";
+    // contexto.fillRect(comidaX, comidaY, tamanho, tamanho);
 
     if(cobraX == comidaX && cobraY == comidaY){
         cobraCorpo.push([comidaX, comidaY]);
@@ -65,14 +70,22 @@ const criaCobrinha = (param) => {
         cobraCorpo[0] = [cobraX, cobraY];
     }
 
-    contexto.fillStyle = "lime";
+    // contexto.fillStyle = "lime";
     cobraX += velocidadeX * tamanho;
     cobraY += velocidadeY * tamanho;
 
-    contexto.fillRect(cobraX, cobraY, tamanho, tamanho);
+    contexto.beginPath();
+    contexto.fillStyle = 'green';
+    contexto.arc(cobraX, cobraY,tamanho/2,0,2*3.14);
+    contexto.fill();  
+
+    // contexto.fillRect(cobraX, cobraY, tamanho, tamanho);
 
     for (let i = 0; i < cobraCorpo.length; i++){
-        contexto.fillRect(cobraCorpo[i][0], cobraCorpo[i][1], tamanho, tamanho)
+        // contexto.fillRect(cobraCorpo[i][0], cobraCorpo[i][1], tamanho, tamanho)
+        contexto.beginPath();
+        contexto.arc(cobraCorpo[i][0], cobraCorpo[i][1],tamanho/2,0,2*3.14);
+        contexto.fill();  
     }
     
     //fim do jogo
